@@ -1,0 +1,72 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav .logo img {
+    width: 114px;
+    height: 115px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    display: block;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #e27373;
+    color: white;
+}
+/* Dropdown Menu Styling */
+.menu-dropdown {
+    position: relative;
+    
+}
+
+.menu-dropdown .dropdown {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 10px 0;
+    z-index: 1;
+    min-width: 150px;
+    border-radius: 5px;
+}
+
+.menu-dropdown:hover .dropdown {
+    display: block;
+}
+
+.menu-dropdown .dropdown a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: black;
+    transition: background 0.3s ease;
+}
+
+.menu-dropdown .dropdown a:hover {
+    background-color: #e27373;
+    color: white;
+}
