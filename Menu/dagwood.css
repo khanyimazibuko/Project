@@ -1,3 +1,24 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+    animation: gradientBackground 15s ease infinite;
+}
+
+@keyframes gradientBackground {
+    0% {
+        background: linear-gradient(120deg, #3d0101 0%, #fbf7f7 100%);
+    }
+    50% {
+        background: linear-gradient(120deg, #3d0101 0%, #fbf7f7 100%);
+    }
+    100% {
+
+        background: linear-gradient(120deg, #3d0101 0%, #fbf7f7 100%);
+    }
+}
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -69,4 +90,88 @@ nav ul li a:hover {
 .menu-dropdown .dropdown a:hover {
     background-color: #e27373;
     color: white;
+}
+.dagwood {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    
+}
+
+.dagwood h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    top: 20%;
+}
+
+.dagwood p {
+    margin-bottom: 50px;
+    font-size: 1.1em;
+}
+.menu-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px; 
+}
+
+.menu-item {
+    background-color: #fff;
+    padding: 70px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    flex: 1 1 300px;
+    position: relative;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.menu-item:hover {
+    transform: translateY(-10px);
+}
+
+.menu-item img {
+    width: 250px;
+    height: 150px;
+    position: absolute;
+    top: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid white;
+    bottom: 10px;
+}
+
+.menu-item h3 {
+    font-size: 24px;
+    margin-top: 100px;
+    margin-bottom: 10px;
+}
+
+.menu-item p {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.menu-item .btn {
+    background-color: #dddfea;
+    color: #0c0c0c;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: auto; /* Aligns button at the bottom of the menu-item */
+}
+
+.menu-item .btn:hover {
+    background-color: #f71a34;
+}
+
+footer {
+    background-color: #3d0101;
+    color: #f8f4f4;
+    padding: 10px 20px;
+    text-align: center;
+    word-spacing: ;
 }
