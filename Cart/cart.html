@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart</title>
     <link rel="stylesheet" href="cart.css">
-    <!-- Font icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -18,32 +17,53 @@
         </div>
     </nav>
 
-    <!--Table-->
+    <!-- Cart Table -->
     <div class="cart">
-    <table class="cart-table">
-       
-        <tbody>
-            <tr>
-                <td>Dagwood Burger</td>
-                <td>
-                    <button class="decrement-btn"><i class="fas fa-minus"></i></button>
-                    <span class="item-quantity">1</span>
-                    <button class="increment-btn"><i class="fas fa-plus"></i></button>
-                </td>
-            </tr>
-            <tr>
-                <td>BBQ Wings</td>
-                <td>
-                    <button class="decrement-btn"><i class="fas fa-minus"></i></button>
-                    <span class="item-quantity">2</span>
-                    <button class="increment-btn"><i class="fas fa-plus"></i></button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <button>Check Out</button>
-</div>
-   
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Cart items will be dynamically inserted here -->
+            </tbody>
+        </table>
+        <button>Check Out</button>
+    </div>
 
+    <!-- Script to Retrieve Cart from localStorage and Display It -->
+    <script>
+        // Function to populate the cart table from localStorage
+        function populateCart() {
+            const cartTableBody = document.querySelector('.cart-table tbody');
+            cartTableBody.innerHTML = ''; // Clear the table
+
+            // Retrieve cart data from localStorage
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Check if cart is empty
+            if (cart.length === 0) {
+                cartTableBody.innerHTML = '<tr><td colspan="3">Your cart is empty.</td></tr>';
+                return;
+            }
+
+            // Loop through each item in the cart and create table rows
+            cart.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.name}</td>
+                    <td>${item.quantity}</td>
+                    <td>R${(item.price * item.quantity).toFixed(2)}</td>
+                `;
+                cartTableBody.appendChild(row);
+            });
+        }
+
+        // On page load, display the cart
+        window.onload = populateCart;
+    </script>
 </body>
 </html>
