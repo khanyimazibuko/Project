@@ -27,9 +27,13 @@
             <li><a href="signup.php">Sign Up</a></li>
         </ul>
         <ul>
+            <!-- Added Search and Cart Icons -->
+            <li><a href="#"><i class="fas fa-search"></i></a></li>
+            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
             <li class="sign-in"><a href="sign-in.php">Sign In</a></li>
         </ul>
     </nav>
+    
 <!--section1-->
     <section class="dagwood" id="dagwood">
         <h1>Welcome to Ribs Circle's Dagwood Menu</h1>
@@ -127,6 +131,24 @@
             &nbsp; @copyright by khanyisile</p>
         </div>
     </footer>
+
+    <script>
+        function searchItems() {
+            const input = document.getElementById('search-input').value.toLowerCase();
+            const menuItems = document.querySelectorAll('.menu-item');
+
+            menuItems.forEach(item => {
+                const itemName = item.getAttribute('data-item-name').toLowerCase();
+                if (itemName.includes(input)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            return false; // Prevent form submission
+        }
+    </script>
 
 </body>
 </html>

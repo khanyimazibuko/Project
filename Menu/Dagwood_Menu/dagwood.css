@@ -52,12 +52,36 @@ nav ul li a {
     padding: 14px 16px;
     text-decoration: none;
     transition: background 0.3s ease;
+    /*Added items*/
+
+}
+nav ul li a i {
+    font-size: 18px;
+    margin-right: 0;
+    color: black;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
     background-color: #e27373;
     color: white;
 }
+
+/*search*/
+#search-input {
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#search-form button {
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
 /* Dropdown Menu Styling */
 .menu-dropdown {
     position: relative;
@@ -174,4 +198,11 @@ footer {
     padding: 10px 20px;
     text-align: center;
     word-spacing: ;
+}
+
+.social-links a {
+    margin: 0 10px;
+    color: #f8f4f4;
+    text-decoration: none;
+    font-size: 20px;
 }
