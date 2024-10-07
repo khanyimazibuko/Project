@@ -7,6 +7,23 @@
     <link rel="stylesheet" href="dagwood.css">
     <!-- Font icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        // Function to fetch item details using AJAX
+        function fetchItemDetails(id) {
+            fetch(`get_item.php?id=${id}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        alert(`Description: ${data.description}\nPrice: R${data.price}`);
+                    } else {
+                        alert(data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching item details:', error);
+                });
+        }
+    </script>
 </head>
 <body>
     <nav>
@@ -33,191 +50,84 @@
             <li class="sign-in"><a href="sign-in.php">Sign In</a></li>
         </ul>
     </nav>
-    
-<!--section1-->
+    <div class="separate">
+        <p></p>
+    </div>
+
+    <!--section1-->
     <section class="dagwood" id="dagwood">
         <h1>Welcome to Ribs Circle's Dagwood Menu</h1>
-        <p>Ribs Circle's dagwoods were inspired by the local kotas that were made in slices, Lucky Mazibuko was creative and passionate enough
-            to make delicious dagwoods.</p>
+        <p>Ribs Circle's dagwoods were inspired by the local kotas that were made in slices. Lucky Mazibuko was creative and passionate enough to make delicious dagwoods.</p>
         <div class="menu-grid">
             <div class="menu-item">
                 <img src="images/p2.jpg" alt="menu1">
                 <h3>Ham & Cheese Dagwood</h3>
-                <a href="#menu-details" class="btn" >Toasted Bread, Tomato, Lettuce, Cheese, Ham with 120g Chips <b>R32</b></a>
-                <a href="#menu-details" class="btn">Add 4pc Chicken Wings <b>R65</b></a>
+                <a href="javascript:void(0)" class="btn" id="no1" onclick="fetchItemDetails(1)">Toasted Bread, Tomato, Lettuce, Cheese, Ham with 120g Chips <b>R32</b></a>
+                <a href="javascript:void(0)" class="btn" id="no1_wings" onclick="fetchItemDetails(1)">Add 4pc Chicken Wings <b>R65</b></a>
             </div>
             <div class="menu-item">
                 <img src="images/meaty.jpg" alt="menu2">
                 <h3>Chicken Mayo Dagwood</h3>
-                <a href="#menu-details" class="btn" >Toasted Bread, Tomato, Lettuce, 100g Chicken Mayo with 120g Chips <b>R55</b></a>
-                <a href="#menu-details" class="btn">Add 130g Chicken Strips <b>R85</b></a>
+                <a href="javascript:void(0)" class="btn" id="no2" onclick="fetchItemDetails(2)">Toasted Bread, Tomato, Lettuce, 100g Chicken Mayo with 120g Chips <b>R40</b></a>
+                <a href="javascript:void(0)" class="btn" id="no2_strips" onclick="fetchItemDetails(2)">Add 130g Chicken Strips <b>R65</b></a>
             </div>
             <div class="menu-item">
                 <img src="images/meaty.jpg" alt="menu3">
                 <h3>Beef/Chicken Dagwood</h3>
-                <a href="#menu-details" class="btn" >Toasted Bread, Beef/Chicken Patty, Tomato, Lettuce, Fried Onions with 120g Chips <b>R56</b></a>
+                <a href="javascript:void(0)" class="btn" id="no3" onclick="fetchItemDetails(3)">Toasted Bread, Beef/Chicken Patty, Tomato, Lettuce, Fried Onions with 120g Chips <b>R45</b></a>
                 &nbsp;
-                <a href="#menu-details" class="btn">Add 130g Chicken Strips<b>R80</b></a>
+                <a href="javascript:void(0)" class="btn" id="no3_strips" onclick="fetchItemDetails(3)">Add 130g Chicken Strips<b>R70</b></a>
             </div>
         </div>
     </section>
 
-<!--section2-->
-    <section class="dagwood" id="dagwood"></section>
-    <p></p>
-    <div class="menu-grid">
-        <div class="menu-item">
-            <img src="images/p2.jpg" alt="menu1">
-            <h3>Beef & Egg Dagwood</h3>
-            <a href="#menu-details" class="btn" >Toasted Bread, Beef/Chicken Patty, Lettuce, Egg, Fried Onions with 120g Chips <b>R61</b></a>
-            &nbsp;
-            <a href="#menu-details" class="btn">Add Smoked Russian <b>R79</b></a>
+    <!--section2-->
+    <section class="dagwood" id="dagwood">
+        <p></p>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="images/p2.jpg" alt="menu1">
+                <h3>Beef & Egg Dagwood</h3>
+                <a href="javascript:void(0)" class="btn" id="no4" onclick="fetchItemDetails(4)">Toasted Bread, Beef/Chicken Patty, Lettuce, Egg, Fried Onions with 120g Chips <b>R50</b></a>
+                &nbsp;
+                <a href="javascript:void(0)" class="btn" id="no4_Russian" onclick="fetchItemDetails(4)">Add Smoked Russian <b>R69</b></a>
+            </div>
+            <div class="menu-item">
+                <img src="images/meaty.jpg" alt="menu2">
+                <h3>Beef & Cheese Dagwood</h3>
+                <a href="javascript:void(0)" class="btn" id="no5" onclick="fetchItemDetails(5)">Toasted Bread, Beef/Chicken Patty, Lettuce, Cheese, Egg, Fried Onions with 120g Chips <b>R55</b></a>
+                &nbsp;
+                <a href="javascript:void(0)" class="btn" id="no5_wings" onclick="fetchItemDetails(5)">Add 4pc Chicken Wings <b>R89</b></a>
+            </div>
+            <div class="menu-item">
+                <img src="images/meaty.jpg" alt="menu3">
+                <h3>Bacon & Ham Dagwood</h3>
+                <a href="javascript:void(0)" class="btn" id="no6" onclick="fetchItemDetails(6)">Toasted Bread, Beef/Chicken Patty, Lettuce, Ham, Bacon, Fried Onions with 120g Chips <b>R60</b></a>
+                &nbsp;
+                <a href="javascript:void(0)" class="btn" id="no6_Russian" onclick="fetchItemDetails(6)">Add Smoked Russian<b>R77</b></a>
+            </div>
         </div>
-        <div class="menu-item">
-            <img src="images/meaty.jpg" alt="menu2">
-            <h3>Beef & Cheese Dagwood</h3>
-            <a href="#menu-details" class="btn" >Toasted Bread, Beef/Chicken Patty, Lettuce, Cheese, Egg, Fried Onions with 120g Chips <b>R64</b></a>
-            &nbsp;
-            <a href="#menu-details" class="btn">Add 4pc Chicken Wings <b>R99</b></a>
-        </div>
-        <div class="menu-item">
-            <img src="images/meaty.jpg" alt="menu3">
-            <h3>Bacon & Ham Dagwood</h3>
-            <a href="#menu-details" class="btn" >Toasted Bread, Beef/Chicken Patty, Lettuce, Ham, Bacon, Fried Onions with 120g Chips <b>R64</b></a>
-            &nbsp;
-            <a href="#menu-details" class="btn">Add Smoked Russian<b>R85</b></a>
-        </div>
-    </div>
-    <p></p>
     </section>
 
-<!--section3-->
-    <section class="dagwood" id="dagwood"></section>
-    <p></p>
-    <div class="menu-grid">
-        <div class="menu-item">
-            <img src="images/p2.jpg" alt="menu1">
-            <h3>Dagwood with Ribs</h3> 
-            <a href="#menu-details" class="btn" >Toasted Bread, Beef/Chicken Patty, Lettuce, Cheese, Ham, Bacon, Fried Onions, 120g Chips with 170g Ribs<b>R110</b></a>
+    <!--section3-->
+    <section class="dagwood" id="dagwood">
+        <p></p>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="images/p2.jpg" alt="menu1">
+                <h3>Dagwood with Ribs</h3> 
+                <a href="javascript:void(0)" class="btn" id="n07" onclick="fetchItemDetails(7)">Toasted Bread, Beef/Chicken Patty, Lettuce, Cheese, Ham, Bacon, Fried Onions, 120g Chips with 170g Ribs<b>R95</b></a>
+            </div>
+            <div class="menu-item">
+                <img src="images/meaty.jpg" alt="menu2">
+                <h3>Chips</h3>
+                <a href="javascript:void(0)" class="btn" id="300g_chips" onclick="fetchItemDetails(8)">300g Chips (Serves 1)<b>R25</b></a>
+                &nbsp;
+                <a href="javascript:void(0)" class="btn" id="400g_chips" onclick="fetchItemDetails(9)">450g Chips (Serves 2)<b>R35</b></a>
+                &nbsp;
+                <a href="javascript:void(0)" class="btn" id="600g_chips" onclick="fetchItemDetails(10)">600g Chips (Serves 3)<b>R50</b></a>
+            </div>
         </div>
-        <div class="menu-item">
-            <img src="images/meaty.jpg" alt="menu2">
-            <h3>Chips</h3>
-            <a href="#menu-details" class="btn">300g Chips(Serves 1)<b>R25</b></a>
-            &nbsp;
-            <a href="#menu-details" class="btn">450g Chips(Serves 2)<b>R35</b></a>
-            &nbsp;
-            <a href="#menu-details" class="btn">600g Chips(Serves 3)<b>R50</b></a>
-        </div>
-    </div>
-    &nbsp;
-
-    <!-- Footer -->
-    <footer>
-        <div class="copyright">
-            <p>
-            <a href="https://web.facebook.com/ribscircle" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://vm.tiktok.com/ZMrmeMfYL/" target="_blank"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.instagram.com/ribscircle_za?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fab fa-instagram"></i></a>
-            &nbsp; @copyright by khanyisile</p>
-        </div>
-    </footer>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Retrieve cart from localStorage or initialize an empty array
-            let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    
-            // Function to update localStorage with the current cart
-            function updateLocalStorage() {
-                localStorage.setItem("cart", JSON.stringify(cart));
-            }
-    
-            // Function to calculate the total price
-            function calculateTotal() {
-                let total = 0;
-                cart.forEach(item => {
-                    console.log("Item:", item); // Log each item in the cart for debugging
-                    total += item.price || 0; // Ensure we only add valid numbers
-                });
-                return total.toFixed(2); // Return total with two decimal places
-            }
-    
-            // Display the cart and total in the console initially (if items were stored previously)
-            console.log("Initial Cart:", cart);
-            console.log("Initial Total:", calculateTotal());
-    
-            // Declare prices for each menu item (in decimal format)
-            const prices = {
-                "Ham & Cheese Dagwood": 32.00,
-                "Chicken Mayo Dagwood": 55.00,
-                "Beef/Chicken Dagwood": 56.00,
-                "Beef & Egg Dagwood": 61.00,
-                "Beef & Cheese Dagwood": 64.00,
-                "Bacon & Ham Dagwood": 64.00,
-                "Dagwood with Ribs": 110.00,
-                "Chips (300g)": 25.00,
-                "Chips (450g)": 35.00,
-                "Chips (600g)": 50.00
-            };
-    
-            // Select the total price display element
-            const totalPriceDisplay = document.querySelector("#total-price");
-    
-            // Select all menu items
-            const menuItems = document.querySelectorAll(".menu-item");
-    
-            // Add event listener to each menu item
-            menuItems.forEach(item => {
-                const menuItemName = item.querySelector('h3').textContent; // Get the name of the item
-    
-                // Find the buttons within the menu item
-                const buttons = item.querySelectorAll('.btn');
-    
-                // Add click event listener to each button within a menu item
-                buttons.forEach(button => {
-                    button.addEventListener('click', function(event) {
-                        event.preventDefault(); // Prevent default action if necessary
-    
-                        // Create a new object for the selected item
-                        let product = {
-                            name: menuItemName,
-                            price: prices[menuItemName] // Get the price from the prices object
-                        };
-    
-                        // Check if the price is valid before adding to the cart
-                        if (typeof product.price === 'number') {
-                            // Add item object to cart array
-                            cart.push(product);
-    
-                            // Update localStorage
-                            updateLocalStorage();
-    
-                            // Display the current cart and total in the console
-                            console.log("Cart:", cart);
-                            console.log("Total Price:", calculateTotal());
-    
-                            // Update the total price display on the page
-                            if (totalPriceDisplay) {
-                                totalPriceDisplay.textContent = "Total Price: R" + calculateTotal();
-                            }
-                        } else {
-                            console.error("Price not found for:", menuItemName);
-                        }
-                    });
-                });
-            });
-    
-            // Initial display of total price on page load
-            if (totalPriceDisplay) {
-                totalPriceDisplay.textContent = "Total Price: R" + calculateTotal();
-            }
-        });
-    </script>
-    
-    
-    
-    
-
+    </section>
 </body>
 </html>

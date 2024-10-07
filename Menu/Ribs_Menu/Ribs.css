@@ -155,8 +155,8 @@ nav ul li a:hover {
 }
 
 .menu-item .btn {
-    background-color: #dddfea;
-    color: #0c0c0c;
+    background-color: #0c0c0c;
+    color: #f9f4f4;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
@@ -165,7 +165,7 @@ nav ul li a:hover {
 }
 
 .menu-item .btn:hover {
-    background-color: #f71a34;
+    background-color: #f5170f;
 }
 
 footer {

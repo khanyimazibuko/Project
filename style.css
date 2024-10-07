@@ -265,59 +265,47 @@ nav ul li a:hover {
 }
 
 .menu-item .btn:hover {
-    background-color: #058f25;
+    background-color: #989a97;
+}
+/**/
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background-color: white;
+    color: black;
+    margin: 20px 0;
 }
 
-.menu {
-    text-align: center;
-    padding: 20px;
+.about-image {
+    flex: 1;
+    padding-right: 20px;
 }
 
-.menu h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-
-
-.menu1 {
-    text-align: center;
-    max-width: 300px; /* Adjust this value as needed */
-}
-
-.menu1 img {
+.about-image img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
-
-.menu1 h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
+.about-text {
+    flex: 1;
+    padding-left: 20px;
 }
 
-.menu1 img {
-    width: auto;
-    height: 500px;
-    border-radius: 5px;
-    image-orientation: unset;
-    
+.about-text h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #3d0101;
 }
 
-.menu-btn {
-    background-color: #0c0c0c;
-    color: #f9f4f4;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    display: inline-block;
-    margin-top: auto;
+.about-text p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #333;
 }
 
-.menu-btn:hover {
-    background-color: #e31212;
-}
 
 
 .section4 {
